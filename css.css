@@ -1,0 +1,30 @@
+html {
+    height: 100%;
+}
+
+body {
+    position :relative;
+    background-size : cover ;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.css-form, .css-question {
+    display: none;
+}
+
+.cont {
+    display: block;
+}
+
+.centerThings{
+    position: relative;
+    margin-top : 200px;
+}
+
+.clock {
+    color : white;
+    text-align: center;
+    font-size: 5em;
+    font-weight: 60;
+}
