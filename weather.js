@@ -17,7 +17,7 @@ function getAndPrint(lat, lon) {
     ).then(function (response) {
         return response.json();
     }).then(function (json) {
-        weatherTemp.innerText = json.main.temp;
+        weatherTemp.innerText = parseInt(json.main.temp) + 'º';
         weatherLoca.innerText = json.name;
     })
 }

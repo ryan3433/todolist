@@ -13,18 +13,39 @@ body {
     display: none;
 }
 
+.toDoInput {
+    border: 0;
+    border-bottom: 2px solid #fff;
+    background-color:transparent;
+    font-weight: 500;
+    font-size: 120%;
+    text-align: center;
+    color : white;
+}
+
 .cont {
     display: block;
 }
 
 .centerThings{
     position: relative;
-    margin-top : 200px;
+    margin-top : ;
 }
 
 .clock {
     color : white;
     text-align: center;
-    font-size: 5em;
+    font-size: 3em;
     font-weight: 60;
+}
+
+.clock h1 {
+    margin-block-start: 0em;
+    margin-block-end: 0em;
+}
+
+.todolists {
+    color : white;
+    position: relative;
+    text-align: center;
 }
