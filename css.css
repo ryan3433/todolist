@@ -18,7 +18,7 @@ body {
     border-bottom: 2px solid #fff;
     background-color:transparent;
     font-weight: 500;
-    font-size: 120%;
+    font-size: 130%;
     text-align: center;
     color : white;
 }
@@ -29,13 +29,13 @@ body {
 
 .centerThings{
     position: relative;
-    margin-top : ;
+    margin-top : 100px;
 }
 
 .clock {
     color : white;
     text-align: center;
-    font-size: 3em;
+    font-size: 4em;
     font-weight: 60;
 }
 
@@ -48,4 +48,10 @@ body {
     color : white;
     position: relative;
     text-align: center;
+}
+
+.rightWeather {
+    position: relative;
+    float: right;
+    color: white;
 }
