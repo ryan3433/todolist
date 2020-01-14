@@ -22,16 +22,18 @@ function deleteBtn(event) {
 
 function addToDo(text) {
     const li = document.createElement('li');
-    const btn = document.createElement('button');
+    //    const btn = document.createElement('button');
+    const i = document.createElement('i')
     const span = document.createElement('span');
     span.innerText = text;
-    btn.innerText = "❌";
+    i.classList.add("fas", "fa-trash");
+    //    btn.appendChild(i);
     const newId = TODO_ARR.length;
-    li.appendChild(btn);
     li.appendChild(span);
+    li.appendChild(i);
     li.id = newId;
     ul.appendChild(li);
-    btn.addEventListener('click', deleteBtn);
+    i.addEventListener('click', deleteBtn);
     const toDoObj = {
         text: text,
         id: newId
@@ -48,18 +50,23 @@ function toDoHandler(event) {
 }
 
 function askToDo() {
-    toDoForm.addEventListener("submit", toDoHandler);
 }
 
-function loadToDos() {
-    const savedToDos = localStorage.getItem(TODOS_LS);
-    if (savedToDos !== null) {
-        askToDo();
-    }
-}
-
-function init() {
-    askToDo();
-}
-
-init();
+//function loadToDos() {
+//    const savedToDos = localStorage.getItem(TODOS_LS);
+//    if (savedToDos !== null) {
+//        const a = JSON.parse(savedToDos);
+//        a.forEach(function (todo) {
+//            addToDo(todo.text);
+//        });
+//
+//
+//    }
+//}
+//
+//function init() {
+//    loadToDos();
+//    toDoForm.addEventListener("submit", toDoHandler);
+//}
+//
+//init();

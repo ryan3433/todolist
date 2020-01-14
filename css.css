@@ -9,6 +9,11 @@ body {
     background-repeat: no-repeat;
 }
 
+header {
+    height: 100px;
+    position: relative;
+}
+
 .css-form, .css-question {
     display: none;
 }
@@ -29,7 +34,7 @@ body {
 
 .centerThings{
     position: relative;
-    margin-top : 100px;
+    margin-top : 0;
 }
 
 .clock {
@@ -51,6 +56,9 @@ body {
 }
 
 .rightWeather {
+    width: 100px;
+    height: 100px;
     position: relative;
     color: white;
+    float: right;
 }
