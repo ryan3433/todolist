@@ -21,25 +21,29 @@ function deleteBtn(event) {
 }
 
 function addToDo(text) {
-    const li = document.createElement('li');
-    //    const btn = document.createElement('button');
-    const i = document.createElement('i')
-    const span = document.createElement('span');
-    span.innerText = text;
-    i.classList.add("fas", "fa-trash");
-    //    btn.appendChild(i);
-    const newId = TODO_ARR.length;
-    li.appendChild(span);
-    li.appendChild(i);
-    li.id = newId;
-    ul.appendChild(li);
-    i.addEventListener('click', deleteBtn);
-    const toDoObj = {
-        text: text,
-        id: newId
+    if (JSON.parse(localStorage.getItem(TODOS_LS)).length <= 9) {
+        const li = document.createElement('li');
+        //    const btn = document.createElement('button');
+        const i = document.createElement('i')
+        const span = document.createElement('span');
+        span.innerText = text;
+        i.classList.add("fas", "fa-trash");
+        //    btn.appendChild(i);
+        const newId = TODO_ARR.length;
+        li.appendChild(span);
+        li.appendChild(i);
+        li.id = newId;
+        ul.appendChild(li);
+        i.addEventListener('click', deleteBtn);
+        const toDoObj = {
+            text: text,
+            id: newId
+        }
+        TODO_ARR.push(toDoObj);
+        saveToDo();
+    } else {
+        console.log('그만');
     }
-    TODO_ARR.push(toDoObj);
-    saveToDo();
 }
 
 function toDoHandler(event) {
@@ -52,21 +56,22 @@ function toDoHandler(event) {
 function askToDo() {
 }
 
-//function loadToDos() {
-//    const savedToDos = localStorage.getItem(TODOS_LS);
-//    if (savedToDos !== null) {
-//        const a = JSON.parse(savedToDos);
-//        a.forEach(function (todo) {
-//            addToDo(todo.text);
-//        });
-//
-//
-//    }
-//}
-//
-//function init() {
-//    loadToDos();
-//    toDoForm.addEventListener("submit", toDoHandler);
-//}
-//
-//init();
+function loadToDos() {
+    const savedToDos = localStorage.getItem(TODOS_LS);
+    if (savedToDos !== null) {
+        const a = JSON.parse(savedToDos);
+        a.forEach(function (todo) {
+            addToDo(todo.text);
+        });
+    }
+}
+
+function init() {
+    loadToDos();
+    toDoForm.addEventListener("submit", toDoHandler);
+    //if (JSON.parse(savedToDos).length >= 9) {
+    //alert('그만');
+    //}
+}
+
+init();
