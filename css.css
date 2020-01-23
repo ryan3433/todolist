@@ -18,7 +18,7 @@ header {
     display: none;
 }
 
-.toDoInput {
+.toDoInput, .serchGoogle {
     border: 0;
     border-bottom: 2px solid #fff;
     background-color:transparent;
@@ -34,7 +34,7 @@ header {
 
 .centerThings{
     position: relative;
-    margin-top : 0;
+    margin-top : 0px;
 }
 
 .clock {
@@ -44,7 +44,7 @@ header {
     font-weight: 60;
 }
 
-.clock h1 {
+.clock, h1 {
     margin-block-start: 0em;
     margin-block-end: 0em;
 }
@@ -53,6 +53,15 @@ header {
     color : white;
     position: relative;
     text-align: center;
+}
+
+.toDoUl {
+    font-size: 20px;
+
+}
+
+.hello {
+    font-size: 25px;
 }
 
 .rightWeather {

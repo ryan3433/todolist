@@ -20,21 +20,36 @@ function deleteBtn(event) {
     saveToDo()
 }
 
+function togleBtn(event) {
+    targetBtn = event.target;
+    if (targetBtn.className === "far fa-square") {
+        targetBtn.className = "far fa-check-square";
+        targetBtn.nextSibling.style.textDecoration = "line-through";
+    } else {
+        targetBtn.className = "far fa-square";
+        targetBtn.nextSibling.style.textDecoration = "none";
+    }
+}
+
 function addToDo(text) {
-    if (JSON.parse(localStorage.getItem(TODOS_LS)).length <= 9) {
+    if (JSON.parse(localStorage.getItem(TODOS_LS)).length <= 6) {
         const li = document.createElement('li');
         //    const btn = document.createElement('button');
-        const i = document.createElement('i')
+        const deleteIcon = document.createElement('i');
         const span = document.createElement('span');
-        span.innerText = text;
-        i.classList.add("fas", "fa-trash");
+        const togleIcon = document.createElement('i');
+        span.innerText = `　${text}　`;
+        togleIcon.classList.add("far", "fa-square");
+        deleteIcon.classList.add("fas", "fa-trash");
         //    btn.appendChild(i);
         const newId = TODO_ARR.length;
+        li.appendChild(togleIcon);
         li.appendChild(span);
-        li.appendChild(i);
+        li.appendChild(deleteIcon);
         li.id = newId;
         ul.appendChild(li);
-        i.addEventListener('click', deleteBtn);
+        togleIcon.addEventListener('click', togleBtn);
+        deleteIcon.addEventListener('click', deleteBtn);
         const toDoObj = {
             text: text,
             id: newId
@@ -42,7 +57,7 @@ function addToDo(text) {
         TODO_ARR.push(toDoObj);
         saveToDo();
     } else {
-        console.log('그만');
+        toDoForm.addEventListener("submit", alert('그만'));
     }
 }
 
@@ -69,9 +84,6 @@ function loadToDos() {
 function init() {
     loadToDos();
     toDoForm.addEventListener("submit", toDoHandler);
-    //if (JSON.parse(savedToDos).length >= 9) {
-    //alert('그만');
-    //}
 }
 
 init();
